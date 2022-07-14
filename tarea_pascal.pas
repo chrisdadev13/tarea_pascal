@@ -20,18 +20,15 @@ begin
                  end
               else
                   begin
-                      write('El rango de las notas debe estar entre 1 y 20');
+                     while (grades[i] > 20) or (grades[i] < 1) do
+                           begin
+                             writeln('Mi loco la nota no debe ser mayor a 20 o menor a 1');
+                             write('Nota(',i,'=');
+                             read(grades[i]);
+                           end;
                   end;
          end;
      avg:= sum / c;
-     for i:=1 to c do
-         begin
-              if (grades[i] >= avg) then
-                 begin
-                      cnp:=cnp+1;
-                 end;
-         end;
      write('El promedio es: ', avg:2:2);
-     write('La cantidad de notas sobre el promedio es ', cnp);
      readkey;
 end.
